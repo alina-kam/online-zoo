@@ -57,6 +57,7 @@
     --green: #4B9200;
     --gray: #767474;
     --black-blue: #333B41;
+    --orange-gradient-background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 }
 
 
@@ -109,6 +110,14 @@ a{
     font-weight: 400;
     font-size: 48px;
     line-height: 120%;
+    color: #333B41;
+}
+
+.h3{
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
     color: #333B41;
 }
 
@@ -373,5 +382,96 @@ a{
     background: #FE9013;
 }
 
-
 /*Pets styles end*/
+
+
+/*Pick-feed styles start*/
+
+.pick-feed{
+    background: var(--orange-gradient-background);
+    padding-top: 69px;
+}
+
+.pick-feed__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 41px 59px 59px 99px;
+    background: rgba(253, 253, 255, 0.52);
+    border-radius: 20px;
+}
+
+.pick-feed__title{
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    text-align: center;
+    color: #FE9013;
+}
+
+.pick-feed__subtitle{
+    align-self: start;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: var(--black-blue);
+}
+
+.pick-feed__text{
+    align-self: start;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--black-blue);
+}
+
+.pick-feed__description{
+    align-self: start;
+    margin-bottom: 60px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--black-blue);
+}
+
+.pick-feed__steps{
+    margin: 0px 99px 60px;
+    display: flex;
+    gap: 30px;
+}
+
+.pick-feed__step{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.step__picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 168px;
+    height: 168px;
+    background-color: #fff;
+    border: rgba(249, 128, 75, 1) 1px solid;
+    border-radius: 5px;
+}
+
+.step__text{
+    max-width: 168px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--black-blue);
+}
+
+.button_feed{
+    padding: 16px 71px 16px 77px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    border-radius: 25px;
+}
+
+/*Pick-feed styles end*/
