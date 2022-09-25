@@ -183,6 +183,11 @@ li{
     line-height: 140%;
 }
 
+.navigation__link_about{
+    pointer-events: none;
+    color: var(--orange);
+}
+
 .copypast-link{
     color:#fff;
     font-weight: 500;
@@ -190,7 +195,7 @@ li{
     line-height: 140%;
 }
 
-.navigation__link,.copypast-link :active :hover{
+.navigation__link:active, .navigation__link:hover,.copypast-link:active, .copypast-link:hover{
     color: var(--orange);
 }
 
