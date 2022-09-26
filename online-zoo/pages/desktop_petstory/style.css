@@ -446,6 +446,12 @@ ul{
     color: var(--black-blue);
 }
 
+.donate-link{
+    display: inline-block;
+    color: var(--black-blue);
+    border-bottom:#FE9013 1px solid;
+}
+
 .pick-feed__steps{
     margin: 0px 99px 60px;
     display: flex;
