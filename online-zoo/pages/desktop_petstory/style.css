@@ -188,7 +188,7 @@ ul{
     line-height: 140%;
 }
 
-.navigation__link_about{
+.navigation__link_active{
     pointer-events: none;
     color: var(--orange);
 }
