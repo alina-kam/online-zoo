@@ -128,6 +128,10 @@ li{
     list-style-type: none;
 }
 
+ul{
+    padding: 0;
+}
+
 .wrapper{
     max-width: 1160px;
     margin: 0 auto
@@ -172,7 +176,7 @@ li{
     margin: 0;
 }
 
-.navigation__item:last-child{
+.navigation__item.designed-item{
     margin-left: 380px;
 }
 
