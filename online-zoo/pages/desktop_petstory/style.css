@@ -576,10 +576,10 @@ input[type="range"]::before{
     content: "";
     position: absolute;
     z-index: -1;
-    top: -0.5px;
-    right: -0.5px;
-    bottom: -0.5px;
-    left: -0.5px;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
     background: var(--pink-gradient-background);
     border-radius: 5px;
 }

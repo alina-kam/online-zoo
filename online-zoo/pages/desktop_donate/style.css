@@ -256,6 +256,10 @@ ul{
     color: #333B41;
 }
 
+.donate__widget{
+    margin-bottom: 48px;
+}
+
 .widget{
     display: flex;
     align-items: center;
@@ -307,15 +311,18 @@ ul{
 }
 
 .amount__range{
+    position: relative;
     align-self: start;
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 8px 30px 9px 26px;
+    height: 27px;
+    padding: 8px 30px 9px 30px;
     margin-bottom: 12px;
     background: #404950;
     border-radius: 2px;
 }
+
 .amount__track{
     position: absolute;
     z-index: 1;
@@ -323,24 +330,36 @@ ul{
     border-bottom: #72828E 2px solid;
 }
 
-.amount__radio{
-    position: relative;
+.amount__radios{
+    width: 100%;
+    position: absolute;
+    top: 8px;
+    left: 0px;
     display:flex;
-    gap: 120px;
+    justify-content: space-between;
 }
 
 input[type="radio"]{
     display: none;
 }
 
-.custom-radio+label{
-    display: inline-flex;
+.amount__label{
+    position: relative;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     align-items: center;
-    user-select: none;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #333B41;
     cursor: pointer;
 }
 
-.custom-radio+label::before{
+.amount__label::before{
     position: relative;
     z-index: 2;
     content: '';
@@ -349,34 +368,41 @@ input[type="radio"]{
     height: 10px;
     border-radius: 50%;
     background: #FFEE2E;
+    cursor: pointer;
 }
 
-.amount__prices{
-    display: flex;
-    gap: 60px;
-    margin-bottom: 50px;
+.custom-radio__small-ring{
+    opacity: 0;
+    position: absolute;
+    z-index: 3;
+    top: -6.5px;
+    left: 23px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    border: 2px solid #FE9013;
+    cursor: pointer;
 }
 
-.prices__item{
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 140%;
-    text-transform: uppercase;
-    color: #333B41;
+.amount__label::after{
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: 14px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #FE9013;
+    cursor: pointer;
 }
 
-.amount__prices .prices__item:nth-child(5){
-    margin-left: 20px;
-    margin-right: 20px;
+.amount__radios input[type="radio"]:checked + .amount__label::after{
+    opacity: 1;
 }
 
-.amount__prices .prices__item:nth-child(7){
-    margin-left: 20px;
-    margin-right: 35px;
-}
-
-.prices__item::before{
-    content: url("../../assets/icons/dollar_black.svg")
+.amount__radios input[type="radio"]:checked + .amount__label .custom-radio__small-ring{
+    opacity: 1;
 }
 
 .amount__another{
@@ -385,6 +411,7 @@ input[type="radio"]{
 
 .amount__input{
     width: 268px;
+    margin-top: 90px;
     padding: 16px 10px;
     background-color: rgba(196, 196, 196, 0);
     border: 1px solid #929699;
@@ -394,6 +421,12 @@ input[type="radio"]{
     font-size: 16px;
     line-height: 140%;
     color: #929699;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .amount__periods{
