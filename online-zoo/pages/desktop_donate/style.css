@@ -548,7 +548,7 @@ input[type="radio"]{
     color: #FFFFFF;
 }
 
-.social-media__link:hover{
+.social-media__link:hover, .social-media__link:active{
     color: #4B9200;
 }
 
