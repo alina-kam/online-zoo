@@ -506,6 +506,8 @@ ul{
 }
 
 .testimonials__cards{
+    position: relative;
+    z-index: 3;
     display: flex;
     gap: 30px;
     margin-bottom: 21px;
