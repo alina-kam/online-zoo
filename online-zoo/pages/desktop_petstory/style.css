@@ -82,6 +82,7 @@ a{
     font-weight: 500;
     font-size: 16px;
     line-height: 140%;
+    letter-spacing: -0.06em;
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
@@ -268,18 +269,20 @@ ul{
 .backstage__container{
     padding: 140px 0px 180px;
     display: flex;
+    align-items: flex-start;
     gap: 87px;
 }
 
 .backstage__text-content{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
 .description-text{
     font-weight: 400;
     font-size: 16px;
-    line-height: 140%;
+    line-height: 21px;
     color: var(--black-blue);
 }
 
@@ -310,6 +313,7 @@ ul{
 }
 
 .pets__container{
+    position: relative;
     padding-bottom: 100px;
     display: flex;
     flex-direction: column;
@@ -325,6 +329,9 @@ ul{
 }
 
 .pet-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     max-width: 366px;
     border: rgba(250, 111, 50, 1) 1px solid;
     border-radius: 5px;
@@ -351,7 +358,7 @@ ul{
 .capture__title{
     font-weight: 500;
     font-size: 16px;
-    line-height: 140%;
+    line-height: 20px;
     text-transform: uppercase;
     color: #000000;
 }
@@ -359,7 +366,7 @@ ul{
 .capture__decription{
     font-weight: 300;
     font-size: 15px;
-    line-height: 120%;
+    line-height: 18px;
     color: #000000;
 }
 
@@ -385,10 +392,37 @@ ul{
     display: none;
 }
 
+.button-arrow_left{
+    left: -82px;
+    top: 403px;
+    background: url(../../assets/icons/arrow-left.svg) no-repeat center;
+}
+
+.button-arrow_right{
+    top: 403px;
+    right: -82px;
+    background: url(../../assets/icons/arrow-right.svg) no-repeat center;
+}
+
+.button-arrow{
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--orange);
+    cursor: pointer;
+}
+
+.button-arrow:hover, .button-arrow:active{
+    background-color: var(--green);
+}
+
 .button_choose{
     padding: 16px 55px 16px 60px;
     border-radius: 25px;
     background: #FE9013;
+    text-align: center;
 }
 
 /*Pets styles end*/
@@ -411,6 +445,7 @@ ul{
 }
 
 .pick-feed__title{
+    margin-left: -25px;
     margin-bottom: 30px;
     font-weight: 400;
     font-size: 48px;
@@ -452,9 +487,15 @@ ul{
     border-bottom:#FE9013 1px solid;
 }
 
+.pick-feed__h3{
+    margin-left: -35px;
+}
+
 .pick-feed__steps{
-    margin: 0px 99px 60px;
+    margin-bottom: 60px;
+    margin-left: -30px;
     display: flex;
+    justify-content: center;
     gap: 30px;
 }
 
@@ -483,7 +524,13 @@ ul{
     color: var(--black-blue);
 }
 
+.pick-feed__arrow{
+    position: relative;
+    top: -50px;
+}
+
 .button_feed{
+    margin-left: -30px;
     padding: 16px 71px 16px 77px;
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
     border-radius: 25px;
@@ -495,7 +542,7 @@ ul{
 /*Testimonials styles start*/
 
 .testimonials{
-    background: url('../../assets/images/leaf.jpg') right 100% no-repeat;
+    background: url('../../assets/images/leaf.jpg') right 127% no-repeat;
 }
 
 .testimonials__container{
