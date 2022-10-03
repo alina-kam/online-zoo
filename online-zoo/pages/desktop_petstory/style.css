@@ -840,7 +840,7 @@ input[type="range"]::-webkit-slider-thumb{
 
 /*Max-width 1000px styles start*/
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1599px){
 
     .wrapper{
         max-width: 940px;
@@ -1031,7 +1031,7 @@ input[type="range"]::-webkit-slider-thumb{
 
 /*Max-width 640px styles start*/
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 999px){
 
     .wrapper{
         max-width: 600px;
@@ -1304,7 +1304,7 @@ input[type="range"]::-webkit-slider-thumb{
 
 /*Max-width 320px styles start*/
 
-@media screen and (max-width:321px){
+@media screen and (max-width:639px){
 
     .wrapper{
         max-width: 300px;
