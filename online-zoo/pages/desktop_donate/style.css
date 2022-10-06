@@ -197,6 +197,20 @@ ul{
 .navigation__link:active, .navigation__link:hover{
     color: var(--orange);
 }
+.header__burger{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 18px;
+    height: 10px;
+}
+.burger_line{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #FFFFFF;
+    border-radius: 2px;
+}
 
 /* Header styles end*/
 
@@ -699,7 +713,157 @@ input[type="number"]::-webkit-inner-spin-button {
 
 }
 
-
-
-
 /*Max-width 1000px styles end*/
+
+
+/*Max-width 640px styles start*/
+
+@media screen and (max-width: 640px){
+
+    .wrapper{
+        max-width: 600px;
+    }
+    .h1{
+        font-size: 12.2899px;
+        line-height: 120%;
+        text-align: center;
+    }
+    .h3{
+        font-size: 24px;
+        line-height: 120%;
+        max-width: 100%;
+    }
+
+
+    .header__container{
+        padding: 1.29px 0px 3.68px;
+        justify-content: space-between;
+    }
+    .header__logo{
+        margin-right: 0px;
+        padding-bottom: px;
+        height: 29px;
+        width: 57px;
+        border: none;
+        text-align: center;
+    }
+    .bamboo-stick{
+        height: 13.5px;
+        bottom: 0px;
+        left: 10.13px;
+    }
+    .header__navigation{
+        display: none;
+    }
+    .header__burger{
+        display: flex;
+    }
+
+
+    .watch-online{
+        min-height: 335px;
+        background: url(../../assets/images/giant-panda_390.jpg) -272px center no-repeat ;
+        background-size: cover;
+    }
+
+
+    .pick-feed{
+        padding: 30px 0px 46px;
+    }
+    .pick-feed__info{
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .info__description{
+        font-weight: 400;
+    }
+    .pick-feed__h3{
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 130%;
+        margin-bottom: 30px;
+    }
+    .donate{
+        padding: 30px 0px 31px;
+    }
+    .donate__text{
+        align-self:center;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .widget{
+        margin-bottom: 38px;
+    }
+    .amount__text{
+        margin-left: 10px;
+        margin-bottom: 7px;
+    }
+    .amount__range{
+        margin: 0;
+        width: 100%;
+    }
+    #radio2 + .amount__label{
+        display: none;
+    }
+    #radio3 + .amount__label{
+        display: none;
+    }
+    .amount__range{
+        margin-bottom: 12px;
+    }
+    .amount__another{
+        margin-bottom: 31px;
+    }
+    .amount__input{
+        margin-top: 82px;
+        width: 180px;
+        padding: 10px 10px 11px 6px;
+    }
+
+
+    .footer__container{
+        padding: 12px 0px 12px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer__logo{
+        margin-bottom: 32px;
+    }
+    .footer__h1{
+        font-size: 19.0145px;
+        line-height: 120%;
+    }
+    .footer__subscribe{
+        display: none;
+    }
+    .footer__social-media{
+        grid-column: 2;
+        grid-row: 1/3;
+        justify-self: end;
+    }
+    .social-media{
+        gap: 20px;
+    }
+    .social-media__link{
+        content: '';
+    }
+    .footer__button{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin-bottom: 67px;
+    }
+    .button_donate{
+        padding: 16px 50px;
+    }
+    .footer__copypast{
+        grid-column: 2;
+    }
+    .footer__navigation .navigation{
+        gap:37px;
+    }
+    .social-media__link>span{
+        display: none;
+    }
+
+}
+
+/*Max-width 640px styles end*/
