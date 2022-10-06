@@ -867,3 +867,152 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /*Max-width 640px styles end*/
+
+
+/*Max-width 320px styles start*/
+
+@media screen and (max-width:320px){
+
+    .wrapper{
+        max-width: 300px;
+    }
+    .h2{
+        font-size: 24px;
+        line-height: 120%;
+        margin-bottom: 10px;
+    }
+
+
+    .watch-online{
+        min-height: 187px;
+        background: url(../../assets/images/giant-panda-187.jpg) center no-repeat ;
+    }
+
+
+    .pick-feed{
+        padding: 30px 0px 20px;
+    }
+    .pick-feed__h3{
+        font-size: 24px;
+        line-height: 120%;
+    }
+    .donate{
+        padding: 20px 0px;
+    }
+    .donate__text{
+        font-size: 16px;
+        line-height: 140%;
+        margin-bottom: 8px;
+    }
+    .widget{
+        margin-bottom: 0px;
+    }
+    .widget__animal-pictute{
+        width: 160px;
+    }
+    .quantity__number{
+        font-size: 40.6015px;
+        line-height: 80%;
+    }
+    .quantity__text{
+        font-size: 9.02255px;
+        line-height: 140%;
+    }
+    .widget__cross{
+        margin-left: 8px;
+        margin-right: 36px;
+    }
+    .cross-icon{
+        width: 8px;
+    }
+    .amount__text{
+        margin-left: 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        margin-bottom: 8.5px;
+    }
+    .amount__range{
+        height: 14px;
+    }
+    .amount__track{
+        width: 93%;
+        border-bottom: #72828E 1px solid;
+    }
+    .amount__radios{
+        top: 7px;
+    }
+    .amount__label{
+        gap: 11px;
+        font-size: 13px;
+        line-height: 140%;
+    }
+    .amount__label::before{
+        width: 5px;
+        height: 5px;
+    }
+    .custom-radio__small-ring{
+        width: 12px;
+        height: 12px;
+    }
+    .amount__label::after{
+        width: 20px;
+        height: 20px;
+    }
+    .amount__another{
+        margin-bottom: 25px;
+    }
+    .amount__input{
+        margin-top:30px;
+    }
+    .amount__periods{
+        margin-bottom: 27px;
+    }
+    .donate__share{
+        width: 101%;
+        text-align: center;
+    }
+
+
+    .footer__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 20px 0px;
+    }
+    .footer__logo{
+        margin: 0;
+        border: none;
+        width: 128px;
+        padding: 0px;
+        font-size: 19.0145px;
+        line-height: 120%;
+    }
+    .footer__bamboo-stick{
+        height: 21px;
+        bottom: 5px;
+        left: 73px;
+    }
+    .footer__social-media{
+        order: 2;
+    }
+    .social-media{
+        flex-direction: row;
+        gap: 30px;
+    }
+    .footer__button{
+        margin: 0;
+        order: 3;
+    }
+    .footer__navigation{
+        order: 5;
+    }
+    .footer__copypast{
+        order: 4;
+    }
+
+
+}
+
+/*Max-width 320px styles end*/
