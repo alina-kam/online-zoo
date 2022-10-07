@@ -735,6 +735,12 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
 
+    .header{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
     .header__container{
         padding: 1.29px 0px 3.68px;
         justify-content: space-between;
@@ -761,6 +767,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
     .watch-online{
+        margin-top: 34px;
         min-height: 335px;
         background: url(../../assets/images/giant-panda_390.jpg) -272px center no-repeat ;
         background-size: cover;

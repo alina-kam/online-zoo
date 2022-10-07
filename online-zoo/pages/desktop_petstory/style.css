@@ -1037,6 +1037,12 @@ input[type="range"]::-webkit-slider-thumb{
         max-width: 600px;
         margin: 0 auto;
     }
+    .header{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
     .header__logo{
         display: flex;
         flex-direction: column;
@@ -1066,6 +1072,7 @@ input[type="range"]::-webkit-slider-thumb{
 
 
     .watch-online{
+        margin-top: 34px;
         min-height: 339px;
         background: url(../../assets/images/giant-panda-765w.jpg) center bottom no-repeat;
         background-size: cover;
