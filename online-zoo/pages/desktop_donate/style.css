@@ -138,6 +138,10 @@ ul{
     margin: 0 auto
 }
 
+.blackout-background{
+    display: none;
+}
+
 
 /* Header styles start*/
 
@@ -739,7 +743,7 @@ input[type="number"]::-webkit-inner-spin-button {
         position: fixed;
         top: 0;
         width: 100%;
-        z-index: 10;
+        z-index: 30;
     }
     .header__container{
         padding: 1.29px 0px 3.68px;
@@ -759,10 +763,83 @@ input[type="number"]::-webkit-inner-spin-button {
         left: 10.13px;
     }
     .header__navigation{
-        display: none;
+        position: absolute;
+        z-index: 30;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        background-color: #fff;
+        transform: translateX(100%);
+        transition: 0.2s linear;
+    }
+    .header__navigation_active{
+        transform: translateX(0);
+    }
+    .header__navigation .navigation{
+        position: relative;
+        left: 0;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .navigation__logo{
+        width: 65px;
+        height: 42px;
+        display: flex;
+        padding: 2.84px 3.8px;
+        border: 1px solid rgba(254, 144, 19, 1)
+    }
+    .navigation__h1{
+        font-size: 15.2116px;
+        line-height: 120%;
+        color: rgba(254, 144, 19, 1);
+    }
+    .navigation__link{
+        color: rgba(51, 59, 65);
+    }
+    .navigation__item.designed-item{
+        margin: 0px;
+    }
+    .header__navigation-close{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+    .close-line{
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: rgba(254, 144, 19, 1);
+    }
+    .close-line:first-child{
+        transform: rotate(45deg);
+    }
+    .close-line:last-child{
+        transform: rotate(-45deg);
     }
     .header__burger{
         display: flex;
+    }
+    .blackout-background{
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 20;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+    }
+    .blackout-background_active{
+        display: block;
     }
 
 
