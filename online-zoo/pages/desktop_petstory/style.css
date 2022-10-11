@@ -597,7 +597,7 @@ ul{
 }
 
 .testimonials__container{
-    overflow-x: hidden;
+    overflow-y: visible;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -610,30 +610,27 @@ ul{
 
 .testimonials__cards{
     position: relative;
+    overflow-y: visible;
     z-index: 3;
     display: flex;
     gap: 30px;
     margin-bottom: 21px;
+    transition: all 0.3s linear;
+}
+
+.testimonials__carousel{
+    overflow-y: visible;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .testimonials__card{
     position: relative;
-    max-width: 268px;
+    min-width: 267px;
     padding: 15px 15px 19px 16px;
     background-color: rgba(241, 243, 242, 1);
     border-radius: 20px;
-}
-
-.testimonials__card::before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: -2px;
-    right: -2px;
-    bottom: -2px;
-    left: -2px;
-    background: var(--pink-gradient-background);
-    border-radius: 20px;
+    border: 1px solid var(--orange);
 }
 
 .card__user{
@@ -674,7 +671,7 @@ ul{
     color: #767474;
 }
 
-input[type="range"]{
+.testimonials__range{
     -webkit-appearance: none;
     position: relative;
     margin-bottom: 31px;
@@ -683,7 +680,7 @@ input[type="range"]{
     border-radius: 5px;
 }
 
-input[type="range"]::before{
+.testimonials__range::before{
     content: "";
     position: absolute;
     z-index: -1;
@@ -695,11 +692,10 @@ input[type="range"]::before{
     border-radius: 5px;
 }
 
-input[type="range"]::-webkit-slider-thumb{
+.testimonials__range::-webkit-slider-thumb{
     -webkit-appearance: none;
-    width: 115.19px;
+    width: 12.5%;
     height: 6px;
-    float: left;
     background: #FE9013;
     border-radius: 5px;
 }

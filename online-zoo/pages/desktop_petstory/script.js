@@ -54,7 +54,8 @@
 
     const thumbnails = ['chikchirik.jpg', 'barash.jpg', 'simpson.jpg', 'ukraine .png', 'boy.jpg', 'girl.jpg', 'enot.jpg', 'coolgorilla.jpg'];
     const userNames = ['Ann Smith', 'Bella Anagene', 'Nick Madoc ', 'Alex Jones', 'Jim Williams', 'Emily Brown', 'David Harris', 'Sophia Burton']
-    const card = document.querySelector('.testimonials__card').innerHTML;
+    const card = document.querySelector('.testimonials__card');
+    const testimonialsRange = document.querySelector('.testimonials__range');
 
     /* const unicThumbnais = [];
     const unicNames = []; */
@@ -74,14 +75,21 @@
 
     for(let i=0; i<8; i++){
         const newCard = document.createElement('div');
-        newCard.innerHTML = card;
+        newCard.innerHTML = card.innerHTML;
         newCard.classList.add('testimonials__card')
 
         let thumbnailUrl = getRandomThumbnail();
         newCard.querySelector('.user__thumbnail').src = '../../assets/images/' + thumbnailUrl;
         newCard.querySelector('.user__name').textContent = getRandomName();
         testimonials.append(newCard);
-
     }
+
+    testimonialsRange.addEventListener('input', () => {
+
+        let cardWidth = card.offsetWidth;
+        let offset = (testimonialsRange.value * -(cardWidth + 30)).toString() + 'px';
+        testimonials.style.left = offset;
+    })
+
 
 }());
