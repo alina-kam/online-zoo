@@ -59,8 +59,12 @@ body {
 }
 
 .game-field__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 90px;
     border: 1px solid;
+    font-size: 2remgit;
 }
 
 .current-size{

@@ -1,4 +1,7 @@
 (function () {
+
+    /*--- Layout ---*/
+
     const BODY = document.querySelector('body');
 
     let container = document.createElement('div');
@@ -56,6 +59,7 @@
     gameField.className = 'game-field';
     container.append(gameField);
 
+    /*--- Set sizes for blocks in game field ---*/
 
     let setBlockSize = (block) => {
         let size = Math.floor(gameField.offsetWidth / 4) + 'px';
@@ -68,17 +72,34 @@
         blocks.forEach(block => setBlockSize(block));
     })
 
-    let createBlock = () => {
+    /* -----------------------------------------*/
+
+    /*--- Fullfill blocks with numbers ---*/
+
+    let arr = [];
+    let i=0;
+    let count = 16;
+    while (i<count) {
+        let number = Math.floor(Math.random() * (15 + 1 - 0) + 0);
+        if (!arr.includes(number)){
+            arr.push(number);
+            i++;
+        }
+    }
+
+    let createBlock = (number) => {
         let block = document.createElement('div');
         block.classList.add('game-field__block');
         setBlockSize(block);
-        console.log(block.style.width);
+        block.innerHTML = number;
         gameField.append(block);
     }
 
     for (let i = 0; i < 16; i++) {
-        createBlock();
+        createBlock(arr[i]);
     }
+
+    /*-----------------------------------*/
 
     let currentSize = document.createElement('div');
     currentSize.classList.add('current-size');
@@ -86,13 +107,13 @@
 
     let currentSizeTitle = document.createElement('div');
     currentSizeTitle.classList.add('current-size__title');
-    currentSizeTitle.innerHTML='Frame size:';
+    currentSizeTitle.innerHTML = 'Frame size:';
     currentSize.append(currentSizeTitle);
 
     let currentSizeValue = document.createElement('div');
     currentSizeValue.classList.add('current-size__value');
-    currentSizeValue.innerHTML='4&times4';
-    currentSize.append(currentSizeValue); 
+    currentSizeValue.innerHTML = '4&times4';
+    currentSize.append(currentSizeValue);
 
     let otherSizes = document.createElement('div');
     otherSizes.classList.add('other-sizes');
@@ -100,8 +121,10 @@
 
     let otherSizesTitle = document.createElement('div');
     otherSizesTitle.classList.add('field-size__title');
-    otherSizesTitle.innerHTML='Other sizes:';
+    otherSizesTitle.innerHTML = 'Other sizes:';
     otherSizes.append(otherSizesTitle);
+
+    /*--- Create option sizes of game field ---*/
 
     let createSize = (blocksNumber) => {
         let otherSize = document.createElement('div');
@@ -117,6 +140,7 @@
     otherSizes.append(createSize(7));
     otherSizes.append(createSize(8));
 
+    /* -------------------------------------- */
 
 
 
