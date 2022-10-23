@@ -62,9 +62,9 @@
     /*--- Set sizes for blocks in game field ---*/
 
     let setBlockSize = (block) => {
-        let size = Math.floor(gameField.offsetWidth / 4) + 'px';
-        block.style.width = size;
-        block.style.height = size;
+        let blockSize = Math.floor(gameField.offsetWidth / 4) + 'px';
+        block.style.width = blockSize;
+        block.style.height = blockSize;
     }
 
     window.addEventListener('resize', () => {
@@ -74,14 +74,14 @@
 
     /* -----------------------------------------*/
 
-    /*--- Fullfill blocks with numbers ---*/
+    /*--- Create blocks, filed with with numbers ---*/
 
     let arr = [];
-    let i=0;
+    let i = 0;
     let count = 16;
-    while (i<count) {
+    while (i < count) {
         let number = Math.floor(Math.random() * (15 + 1 - 0) + 0);
-        if (!arr.includes(number)){
+        if (!arr.includes(number)) {
             arr.push(number);
             i++;
         }
@@ -91,13 +91,22 @@
         let block = document.createElement('div');
         block.classList.add('game-field__block');
         setBlockSize(block);
-        block.innerHTML = number;
+        if (number === 0) {
+            block.classList.add('empty-block');
+            block.innerHTML = '';
+        }
+        else {
+            block.innerHTML = number;
+        }
         gameField.append(block);
     }
 
     for (let i = 0; i < 16; i++) {
         createBlock(arr[i]);
     }
+
+    console.log(arr);
+
 
     /*-----------------------------------*/
 
@@ -141,6 +150,28 @@
     otherSizes.append(createSize(8));
 
     /* -------------------------------------- */
+
+    /*--- Choode blocks, that can be clicked ---*/
+
+    let emptyBlockX = document.querySelector('.empty-block').getBoundingClientRect().left;
+    console.log(emptyBlockX);
+    let emptyBlockY = document.querySelector('.empty-block').getBoundingClientRect().top;
+    console.log(emptyBlockY);
+
+    let blockSize = document.querySelector('.game-field__block').offsetWidth;
+
+    let blocksToClick = [];
+    blocksToClick.push(document.elementFromPoint(emptyBlockX - blockSize, emptyBlockY),
+                    document.elementFromPoint(emptyBlockX + blockSize, emptyBlockY),
+                    document.elementFromPoint(emptyBlockX, emptyBlockY + blockSize),
+                    document.elementFromPoint(emptyBlockX, emptyBlockY - blockSize)
+    );
+
+    blocksToClick = blocksToClick.filter(block => block.classList.contains('game-field__block'));
+    console.log(blocksToClick);
+
+    /* -------------------------------------- */
+
 
 
 
