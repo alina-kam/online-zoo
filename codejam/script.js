@@ -51,7 +51,7 @@
     time.append(timeTitle);
 
     let timeCount = document.createElement('div');
-    timeCount.className = 'moves__count';
+    timeCount.className = 'time__count';
     timeCount.innerHTML = "00:00:00";
     time.append(timeCount);
 
@@ -153,22 +153,36 @@
 
     /*--- Choode blocks, that can be clicked ---*/
 
-    let emptyBlockX = document.querySelector('.empty-block').getBoundingClientRect().left;
-    console.log(emptyBlockX);
-    let emptyBlockY = document.querySelector('.empty-block').getBoundingClientRect().top;
-    console.log(emptyBlockY);
 
-    let blockSize = document.querySelector('.game-field__block').offsetWidth;
+    let countMoves = 0;
 
-    let blocksToClick = [];
-    blocksToClick.push(document.elementFromPoint(emptyBlockX - blockSize, emptyBlockY),
-                    document.elementFromPoint(emptyBlockX + blockSize, emptyBlockY),
-                    document.elementFromPoint(emptyBlockX, emptyBlockY + blockSize),
-                    document.elementFromPoint(emptyBlockX, emptyBlockY - blockSize)
-    );
+    document.querySelector('body').addEventListener('click', (event) => {
+        let emptyBlock = document.querySelector('.empty-block');
+        let blockSize = emptyBlock.offsetWidth;
+        let emptyBlockX = emptyBlock.getBoundingClientRect().left;
+        let emptyBlockY = emptyBlock.getBoundingClientRect().top;
 
-    blocksToClick = blocksToClick.filter(block => block.classList.contains('game-field__block'));
-    console.log(blocksToClick);
+        let blocksToClick = [];
+
+        blocksToClick.push(document.elementFromPoint(emptyBlockX - blockSize, emptyBlockY),
+            document.elementFromPoint(emptyBlockX + blockSize, emptyBlockY),
+            document.elementFromPoint(emptyBlockX, emptyBlockY + blockSize),
+            document.elementFromPoint(emptyBlockX, emptyBlockY - blockSize)
+        );
+
+        blocksToClick = blocksToClick.filter(block => block && block.classList.contains('game-field__block'));
+
+        if(blocksToClick.includes(event.target)){
+            emptyBlock.innerHTML = event.target.innerHTML;
+            emptyBlock.classList.remove('empty-block');
+            event.target.innerHTML = "";
+            event.target.classList.add('empty-block');
+            countMoves++;
+            movesCount.innerHTML = countMoves;
+        }
+
+    })
+
 
     /* -------------------------------------- */
 

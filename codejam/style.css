@@ -43,12 +43,22 @@ body {
 
 .moves{
     display: flex;
+    align-items: center;
     gap: 3px;
+}
+
+.moves__count{
+    font-size: 1.2rem;
 }
 
 .time{
     display: flex;
+    align-items: center;
     gap: 3px;
+}
+
+.time__count{
+    font-size: 1.2rem;
 }
 
 .game-field {
@@ -65,7 +75,9 @@ body {
     height: 90px;
     border: 1px solid;
     font-size: 2rem;
+    cursor: pointer;
 }
+
 
 .current-size{
     display: flex;
