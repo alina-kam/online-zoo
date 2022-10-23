@@ -25,42 +25,80 @@
     container.append(metrics);
 
     let moves = document.createElement('div');
-    moves.className = 'metrics__moves';
-    moves.innerHTML = "Moves: 5"
+    moves.classList.add('metrics__moves', 'moves');
     metrics.append(moves);
 
+    let movesTitle = document.createElement('div');
+    movesTitle.className = 'moves__title';
+    movesTitle.innerHTML = "Moves:";
+    moves.append(movesTitle);
+
+    let movesCount = document.createElement('div');
+    movesCount.className = 'moves__count';
+    movesCount.innerHTML = "0";
+    moves.append(movesCount);
+
     let time = document.createElement('div');
-    time.className = 'metrics__time';
-    time.innerHTML = 'Time: 00:00:00'
+    time.classList.add('metrics__time', 'time');
     metrics.append(time);
+
+    let timeTitle = document.createElement('div');
+    timeTitle.className = 'time__title';
+    timeTitle.innerHTML = "Time:";
+    time.append(timeTitle);
+
+    let timeCount = document.createElement('div');
+    timeCount.className = 'moves__count';
+    timeCount.innerHTML = "00:00:00";
+    time.append(timeCount);
 
     let gameField = document.createElement('div');
     gameField.className = 'game-field';
     container.append(gameField);
 
-    let blockCreate = () => {
+
+    let setBlockSize = (block) => {
+        let size = Math.floor(gameField.offsetWidth / 4) + 'px';
+        block.style.width = size;
+        block.style.height = size;
+    }
+
+    window.addEventListener('resize', () => {
+        let blocks = document.querySelectorAll('.game-field__block');
+        blocks.forEach(block => setBlockSize(block));
+    })
+
+    let createBlock = () => {
         let block = document.createElement('div');
         block.classList.add('game-field__block');
-        block.style.width = Math.floor(gameField.offsetWidth / 4) + 'px';
-        block.style.height = Math.floor(gameField.offsetWidth / 4) + 'px';
+        setBlockSize(block);
         console.log(block.style.width);
         gameField.append(block);
     }
 
     for (let i = 0; i < 16; i++) {
-        blockCreate();
+        createBlock();
     }
 
     let currentSize = document.createElement('div');
     currentSize.classList.add('current-size');
-    currentSize.innerHTML='Frame size: 4&times4';
     container.append(currentSize);
+
+    let currentSizeTitle = document.createElement('div');
+    currentSizeTitle.classList.add('current-size__title');
+    currentSizeTitle.innerHTML='Frame size:';
+    currentSize.append(currentSizeTitle);
+
+    let currentSizeValue = document.createElement('div');
+    currentSizeValue.classList.add('current-size__value');
+    currentSizeValue.innerHTML='4&times4';
+    currentSize.append(currentSizeValue); 
 
     let otherSizes = document.createElement('div');
     otherSizes.classList.add('other-sizes');
     container.append(otherSizes);
 
-    let otherSizesTitle = document.createElement('span');
+    let otherSizesTitle = document.createElement('div');
     otherSizesTitle.classList.add('field-size__title');
     otherSizesTitle.innerHTML='Other sizes:';
     otherSizes.append(otherSizesTitle);

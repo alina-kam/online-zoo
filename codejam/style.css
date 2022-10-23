@@ -11,13 +11,15 @@ body {
 }
 
 .container {
-    max-width: 50%;
-    margin: 50px auto;
+    max-width: 30%;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .menu {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
@@ -26,10 +28,10 @@ body {
 .button {
     border: none;
     border-radius: 8px;
-    padding: 8px 15px;
+    padding: 1.5% 2.5%;
     background-color: #E6E6FA;
     color: #414146;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 .metrics {
@@ -39,7 +41,18 @@ body {
     margin-bottom: 10px;
 }
 
+.moves{
+    display: flex;
+    gap: 3px;
+}
+
+.time{
+    display: flex;
+    gap: 3px;
+}
+
 .game-field {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 10px;
@@ -51,18 +64,19 @@ body {
 }
 
 .current-size{
-    align-self: center;
+    display: flex;
+    gap: 3px;
     margin-bottom: 15px;
 }
 
 .other-sizes{
-    align-self: center;
     display: flex;
-    gap: 2%;
+    gap: 5px;
 }
 
 .other-sizes__value{
     color:rgb(21, 148, 148);
     text-decoration: underline;
+    cursor: pointer;
 }
 
