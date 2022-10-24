@@ -61,6 +61,11 @@
     timeCount.innerHTML = "00:00:00";
     time.append(timeCount);
 
+    let soundCntrl = document.createElement('div');
+    soundCntrl.classList.add('sound');
+    soundCntrl.innerHTML = `<img src='./assets/soundOn.svg' alt='sound' width='20px'>`;
+    metrics.append(soundCntrl);
+
     let gameField = document.createElement('div');
     gameField.className = 'game-field';
     container.append(gameField);
@@ -111,9 +116,6 @@
         createBlock(arr[i]);
     }
 
-    console.log(arr);
-
-
     /*-----------------------------------*/
 
     let currentSize = document.createElement('div');
@@ -155,8 +157,6 @@
     otherSizes.append(createSize(7));
     otherSizes.append(createSize(8));
 
-    /* -------------------------------------- */
-
     /*--- Choode blocks, that can be clicked ---*/
 
 
@@ -185,11 +185,14 @@
             event.target.classList.add('empty-block');
             countMoves++;
             movesCount.innerHTML = countMoves;
+            let soundClick = new Audio('./assets/schelchok.mp3');
+            if (!soundCntrl.classList.contains('muted')){
+                soundClick.play();
+            }
+
         }
 
     })
-
-    /* -------------------------------------- */
 
     /* ---- Mobile menu ---- */
 
@@ -198,8 +201,6 @@
     buttonMenu.addEventListener('click', () => {
         menu.classList.toggle('menu_active');
     })
-
-    /* -------------------------------------- */
 
     /* --- StopWatch --- */
 
@@ -222,8 +223,22 @@
             + ":" + (sec < 10 ? '0' + sec : sec);
     }, 1000);
 
-    /* ------------------------------- */
+    /* --- Sound accompaniment of the movement of blocks --- */
 
+
+    let muted = false;
+    soundCntrl.addEventListener('click', () => {
+        if (!muted) {
+            muted = true;
+            soundCntrl.classList.add('muted');
+            soundCntrl.innerHTML = `<img src='./assets/soundOff.svg' alt='sound' width='20px'>`;
+        }
+        else{
+            soundCntrl.classList.remove('muted');
+            soundCntrl.innerHTML = `<img src='./assets/soundOn.svg' alt='sound' width='20px'>`;
+            muted = false;
+        }
+    })
 
 
 
