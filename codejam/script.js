@@ -169,6 +169,7 @@
 
     otherSizes.addEventListener('click', (event) => {
         if (event.target.id) {
+            clearInterval(stopwatch);
             document.querySelector('.game-field').innerHTML = '';
             blocksNumberInRow = +event.target.id;
             blocksNumber = Math.pow(blocksNumberInRow, 2);
@@ -179,9 +180,16 @@
             if (blocksNumberInRow >= 7) {
                 document.querySelectorAll('.game-field__block').forEach(block => block.classList.add('very-small-text'));
             }
-            else if (blocksNumberInRow >= 5){
+            else if (blocksNumberInRow >= 5) {
                 document.querySelectorAll('.game-field__block').forEach(block => block.classList.add('small-text'));
             }
+            movesCount.innerHTML = 0;
+            countMoves = 0;
+            sec = 0;
+            min = 0;
+            hr = 0;
+            stopwatch = setInterval(tick, 1000);
+            timeCount.innerHTML = '00:00:00';
         }
     })
 
@@ -233,7 +241,7 @@
     let min = 0;
     let hr = 0;
 
-    let stopwatch = setInterval(() => {
+    let tick = () => {
         sec++;
         if (sec >= 60) {
             sec = 0;
@@ -246,7 +254,25 @@
         timeCount.innerHTML = (hr < 10 ? '0' + hr : hr)
             + ":" + (min < 10 ? '0' + min : min)
             + ":" + (sec < 10 ? '0' + sec : sec);
-    }, 1000);
+    }
+
+    let stopwatch = setInterval(tick, 1000);
+
+    /* --- Stop stopwatch --- */
+
+  /*   let isWatchStopped = false;
+    document.querySelector('#stop').addEventListener('click', () => {
+        if (!isWatchStopped){
+            clearInterval(stopwatch);
+            isWatchStopped = true;
+        }
+        else{
+            stopwatch = setInterval(tick, 1000);
+            isWatchStopped = false;
+        }
+        gameField.classList.toggle('unclickable');
+
+    }) */
 
     /* --- Sound accompaniment of the movement of blocks --- */
 

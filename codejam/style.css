@@ -42,7 +42,7 @@ body {
 
 .metrics {
     display: flex;
-    gap: 15%;
+    gap: 15px;
     justify-content: center;
     margin-bottom: 10px;
 }
@@ -87,6 +87,10 @@ body {
     cursor: pointer;
 }
 
+.empty-block{
+    background-color: #f3f3fa;
+}
+
 .current-size{
     display: flex;
     gap: 3px;
@@ -114,6 +118,10 @@ body {
 
 .very-small-text{
     font-size: 1rem;
+}
+
+.unclickable{
+    pointer-events: none;
 }
 
 
