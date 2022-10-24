@@ -14,14 +14,19 @@
 
     let createButton = (text) => {
         let button = document.createElement('button');
-        button.classList.add('button');
-        button.innerHTML = text;
+        button.classList.add('menu__button', 'button');
+        button.innerHTML = `<span>${text}</span>`;
         menu.append(button);
     }
     createButton('Shuffle and start');
     createButton('Stop');
     createButton('Save');
     createButton('Results');
+
+    let buttonMenuMobile = document.createElement('button');
+    buttonMenuMobile.classList.add('button-menu', 'button');
+    buttonMenuMobile.innerHTML = 'Menu';
+    container.prepend(buttonMenuMobile);
 
     let metrics = document.createElement('div');
     metrics.className = 'metrics';
@@ -183,6 +188,17 @@
 
     })
 
+
+    /* -------------------------------------- */
+
+     /* ---- Mobile menu ---- */
+
+    let buttonMenu = document.querySelector('.button-menu');
+
+    buttonMenu.addEventListener('click', () => {
+        menu.classList.toggle('menu_active');
+
+    })
 
     /* -------------------------------------- */
 
