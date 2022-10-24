@@ -12,16 +12,17 @@
     menu.className = 'menu';
     container.prepend(menu);
 
-    let createButton = (text) => {
+    let createButton = (text, id) => {
         let button = document.createElement('button');
         button.classList.add('menu__button', 'button');
+        button.id = id;
         button.innerHTML = `<span>${text}</span>`;
         menu.append(button);
     }
-    createButton('Shuffle and start');
-    createButton('Stop');
-    createButton('Save');
-    createButton('Results');
+    createButton('Shuffle and start', 'shuffle');
+    createButton('Stop', 'stop');
+    createButton('Save', 'save');
+    createButton('Results', 'results');
 
     let buttonMenuMobile = document.createElement('button');
     buttonMenuMobile.classList.add('button-menu', 'button');
@@ -177,7 +178,7 @@
 
         blocksToClick = blocksToClick.filter(block => block && block.classList.contains('game-field__block'));
 
-        if(blocksToClick.includes(event.target)){
+        if (blocksToClick.includes(event.target)) {
             emptyBlock.innerHTML = event.target.innerHTML;
             emptyBlock.classList.remove('empty-block');
             event.target.innerHTML = "";
@@ -188,19 +189,40 @@
 
     })
 
-
     /* -------------------------------------- */
 
-     /* ---- Mobile menu ---- */
+    /* ---- Mobile menu ---- */
 
     let buttonMenu = document.querySelector('.button-menu');
 
     buttonMenu.addEventListener('click', () => {
         menu.classList.toggle('menu_active');
-
     })
 
     /* -------------------------------------- */
+
+    /* --- StopWatch --- */
+
+    let sec = 0;
+    let min = 0;
+    let hr = 0;
+
+    let stopwatch = setInterval(() => {
+        sec++;
+        if (sec >= 60) {
+            sec = 0;
+            min++;
+        }
+        if (min >= 60) {
+            min = 0;
+            hr++;
+        }
+        timeCount.innerHTML = (hr < 10 ? '0' + hr : hr)
+            + ":" + (min < 10 ? '0' + min : min)
+            + ":" + (sec < 10 ? '0' + sec : sec);
+    }, 1000);
+
+    /* ------------------------------- */
 
 
 
