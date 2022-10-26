@@ -22,7 +22,7 @@
         button.innerHTML = `<span>${text}</span>`;
         menu.append(button);
     }
-    createButton('Shuffle and start', 'shuffle');
+    createButton('Shuffle and start', 'restart');
     createButton('Stop', 'stop');
     createButton('Save', 'save');
     createButton('Results', 'results');
@@ -150,6 +150,22 @@
 
     creatBlocks();
 
+    /* --- Restart game --- */
+
+    let restartGame = () => {
+        clearInterval(stopwatch);
+        document.querySelector('.game-field').innerHTML = '';
+        arr = createArrUnicNumbers();
+        creatBlocks();
+        movesCount.innerHTML = 0;
+            countMoves = 0;
+            sec = 0;
+            min = 0;
+            hr = 0;
+            stopwatch = setInterval(tick, 1000);
+            timeCount.innerHTML = '00:00:00';
+    }
+
     /*--- Other sizes of game field ---*/
 
     let createOtherSize = (blocksNumberInRow) => {
@@ -169,13 +185,9 @@
 
     otherSizes.addEventListener('click', (event) => {
         if (event.target.id) {
-            clearInterval(stopwatch);
-            document.querySelector('.game-field').innerHTML = '';
             blocksNumberInRow = +event.target.id;
             blocksNumber = Math.pow(blocksNumberInRow, 2);
             document.querySelectorAll('.game-field__block').forEach(block => setBlockSize(block));
-            arr = createArrUnicNumbers();
-            creatBlocks();
             document.querySelector('.current-size__value').innerHTML = `${blocksNumberInRow}&times${blocksNumberInRow}`;
             if (blocksNumberInRow >= 7) {
                 document.querySelectorAll('.game-field__block').forEach(block => block.classList.add('very-small-text'));
@@ -183,13 +195,7 @@
             else if (blocksNumberInRow >= 5) {
                 document.querySelectorAll('.game-field__block').forEach(block => block.classList.add('small-text'));
             }
-            movesCount.innerHTML = 0;
-            countMoves = 0;
-            sec = 0;
-            min = 0;
-            hr = 0;
-            stopwatch = setInterval(tick, 1000);
-            timeCount.innerHTML = '00:00:00';
+            restartGame();
         }
     })
 
@@ -260,19 +266,19 @@
 
     /* --- Stop stopwatch --- */
 
-  /*   let isWatchStopped = false;
-    document.querySelector('#stop').addEventListener('click', () => {
-        if (!isWatchStopped){
-            clearInterval(stopwatch);
-            isWatchStopped = true;
-        }
-        else{
-            stopwatch = setInterval(tick, 1000);
-            isWatchStopped = false;
-        }
-        gameField.classList.toggle('unclickable');
-
-    }) */
+    /*   let isWatchStopped = false;
+      document.querySelector('#stop').addEventListener('click', () => {
+          if (!isWatchStopped){
+              clearInterval(stopwatch);
+              isWatchStopped = true;
+          }
+          else{
+              stopwatch = setInterval(tick, 1000);
+              isWatchStopped = false;
+          }
+          gameField.classList.toggle('unclickable');
+  
+      }) */
 
     /* --- Sound accompaniment of the movement of blocks --- */
 
@@ -289,6 +295,11 @@
             muted = false;
         }
     })
+
+    /* --- Restart game on button--- */
+
+    let restartButton = document.querySelector('#restart');
+    restartButton.addEventListener('click', restartGame);
 
 
 
