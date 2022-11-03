@@ -1,1 +1,1 @@
-Deploy: https://alina-kam.github.io/online-zoo/pages/desktop_petstory/index.html
+Deploy: https://alina-kam.github.io/online-zoo/online-zoo/pages/desktop_petstory/index.html
