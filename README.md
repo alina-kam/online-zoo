@@ -1,2 +1,1 @@
-# alina-kam-JSFE2022Q3
-Private repository for @alina-kam
+Deploy: https://alina-kam.github.io/online-zoo/pages/desktop_petstory/index.html
